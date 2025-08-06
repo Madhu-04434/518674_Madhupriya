@@ -1,6 +1,5 @@
 WEEK 1 : HACKER RANK
 1]  #include <stdio.h>
-
 void plusMinus(int arr[], int n) {
     int pos = 0, neg = 0, zero = 0;
     for (int i = 0; i < n; i++) {
@@ -10,7 +9,6 @@ void plusMinus(int arr[], int n) {
     }
     printf("%.6f\n%.6f\n%.6f\n", (float)pos/n, (float)neg/n, (float)zero/n);
 }
-
 int main() {
     int n;
     scanf("%d", &n);
@@ -21,7 +19,6 @@ int main() {
 }
 
 2]  #include <stdio.h>
-
 void miniMaxSum(int arr[5]) {
     long total = 0;
     int min = arr[0], max = arr[0];
@@ -32,12 +29,54 @@ void miniMaxSum(int arr[5]) {
     }
     printf("%ld %ld", total - max, total - min);
 }
-
 int main() {
     int arr[5];
     for (int i = 0; i < 5; i++) {
         scanf("%d", &arr[i]);
     }
     miniMaxSum(arr);
+    return 0;
+}
+
+3] #include <stdio.h>
+#include <string.h>
+int main() {
+    char time[10];
+    scanf("%s", time);
+    int hour = (time[0] - '0') * 10 + (time[1] - '0');
+    char period = time[8];
+    if (period == 'P' && hour != 12) {
+        hour += 12;
+    } else if (period == 'A' && hour == 12) {
+        hour = 0;
+    }
+    printf("%02d:%c%c:%c%c", hour, time[3], time[4], time[6], time[7]);
+    return 0;
+}
+4 ] #include <stdio.h>
+#include <string.h>
+int main() {
+    int n;
+    scanf("%d", &n);
+    char strings[n][100];
+    for(int i=0; i<n; i++) {
+        scanf("%s", strings[i]);
+    }
+    int q;
+    scanf("%d", &q);
+    char queries[q][100];
+    for(int i=0; i<q; i++) {
+        scanf("%s", queries[i]);
+    }
+    for(int i=0; i<q; i++) {
+        int count = 0;
+        for(int j=0; j<n; j++) {
+            if(strcmp(queries[i], strings[j]) == 0) {
+                count++;
+            }
+        }
+        printf("%d\n", count);
+    }
+
     return 0;
 }

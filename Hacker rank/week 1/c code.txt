@@ -80,3 +80,62 @@ int main() {
 
     return 0;
 }
+5] #include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int n;
+    scanf("%d", &n);
+    int matrix[n][n];
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    
+    int sum1 = 0, sum2 = 0;
+    // Calculate diagonal sums
+    for(int i = 0; i < n; i++) {
+        sum1 += matrix[i][i]; 
+        sum2 += matrix[i][n-1-i];     
+    }
+    printf("%d", abs(sum1 - sum2));
+    return 0;
+}
+6] #include <stdio.h>
+
+int lonelyinteger(int a_count, int* a) {
+    int result = 0;
+    for (int i = 0; i < a_count; i++) {
+        result ^= a[i];
+    }
+    return result;
+}
+int main() {
+    int n;
+    scanf("%d", &n);
+    
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("%d", lonelyinteger(n, arr));
+    return 0;
+}
+7] #include <stdio.h>
+int lonelyinteger(int a_count, int* a) {
+    int result = 0;
+    for (int i = 0; i < a_count; i++) {
+        result ^= a[i];
+    }
+    return result;
+}
+int main() {
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("%d", lonelyinteger(n, arr));
+    return 0;
+}

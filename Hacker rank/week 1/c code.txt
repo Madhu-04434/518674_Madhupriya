@@ -139,3 +139,41 @@ int main() {
     printf("%d", lonelyinteger(n, arr));
     return 0;
 }
+8] #include <stdio.h>
+#include <stdlib.h>
+int* countingSort(int arr_count, int* arr, int* result_count)
+    static int freq[100] = {0};
+    for (int i = 0; i < arr_count; i++) {
+        freq[arr[i]]++;
+    }
+    *result_count = 100;
+    return freq;
+}
+int main() {
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    int result_count;
+    int* freq = countingSort(n, arr, &result_count);
+    for (int i = 0; i < 100; i++) {
+        printf("%d ", freq[i]);
+    }
+    return 0;
+}
+9] #include <stdio.h>
+#include <stdint.h>
+uint32_t flippingBits(uint32_t n) {
+}
+int main() {
+    int q;
+    scanf("%d", &q);
+    while (q--) {
+        uint32_t n;
+        scanf("%u", &n);
+        printf("%u\n", flippingBits(n));
+    }
+    return 0;
+}
